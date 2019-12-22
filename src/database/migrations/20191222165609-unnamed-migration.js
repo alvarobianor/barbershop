@@ -34,5 +34,5 @@ module.exports = {
         allowNull: false,
       },
     }),
-  down: queryInterface => queryInterface.dropTable('users'),
+  down: queryInterface => queryInterface.dropTable('Users'),
 };
