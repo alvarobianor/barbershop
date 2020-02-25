@@ -17,5 +17,21 @@ class UserController {
       message: 'User created!',
     });
   }
+
+  async show(req, res) {
+    const userExist = await UserModel.findOne({
+      where: { email: req.params.email, provider: false },
+    });
+
+    if (!userExist) return res.status(400).json("This user doesn't exists!");
+
+    const { id, nome, provider, email } = userExist;
+    return res.json({ id, nome, email, provider });
+  }
+
+  // async delete(req, res) {
+  //   await UserModel.destroy({ where: { email: req.params.email } });
+  //   return res.status(200).json('Foi');
+  // }
 }
 export default new UserController();

@@ -12,7 +12,8 @@ routes.use((req, res, next) => {
 });
 
 routes.get('/opa', (req, res) => res.json({ message: `Axt ${req.name}` }));
-
+routes.get('/userA/:email', UserController.show);
+//  routes.get('/userB/:email', UserController.delete);
 routes.post('/users', UserController.store);
 routes.post('/session', SessionController.store);
 
