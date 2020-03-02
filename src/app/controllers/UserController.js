@@ -29,6 +29,10 @@ class UserController {
     return res.json({ id, nome, email, provider });
   }
 
+  async update(req, res) {
+    return res.status(202).json('ok');
+  }
+
   // async delete(req, res) {
   //   await UserModel.destroy({ where: { email: req.params.email } });
   //   return res.status(200).json('Foi');
